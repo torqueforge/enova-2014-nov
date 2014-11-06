@@ -11,10 +11,10 @@ class Bottles
   def verse(number)
     bottle_number      = make_bottle_number(number)
     next_bottle_number = make_bottle_number(bottle_number.successor)
-    "#{bottle_number.amount.capitalize} #{bottle_number.container} of beer on the wall, " +
-    "#{bottle_number.amount} #{bottle_number.container} of beer.\n" +
+    "#{bottle_number} of beer on the wall, ".capitalize +
+    "#{bottle_number} of beer.\n" +
     "#{bottle_number.action}, " +
-    "#{next_bottle_number.amount} #{next_bottle_number.container} of beer on the wall.\n"
+    "#{next_bottle_number} of beer on the wall.\n"
   end
 
   def make_bottle_number(number)
@@ -27,6 +27,10 @@ class BottleNumber
 
   def initialize(number)
     @number = number
+  end
+
+  def to_s
+    "#{amount} #{container}"
   end
 
   def container
