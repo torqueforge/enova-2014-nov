@@ -23,3 +23,7 @@ class House
       "the house that Jack built"].last(num).join(" ")
   end
 end
+
+puts
+puts House.new.line(12)
+puts
